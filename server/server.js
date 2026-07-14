@@ -13,7 +13,13 @@ connectDB(); // Connect to MongoDB
 const app = express();
 
 // Middleware
-app.use(cors()); // Allow frontend to make requests to this server
+// app.use(cors()); // Allow frontend to make requests to this server
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    process.env.CLIENT_URL, // we'll set this after deploying to Vercel
+  ],
+}));
 app.use(express.json()); // Allow server to read JSON from request body
 
 // Test route
