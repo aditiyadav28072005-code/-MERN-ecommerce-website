@@ -13,14 +13,21 @@ connectDB(); // Connect to MongoDB
 const app = express();
 
 // Middleware
-// app.use(cors()); // Allow frontend to make requests to this server
+//app.use(cors()); // Allow frontend to make requests to this server
 app.use(cors({
   origin: [
-    'http://localhost:5173',
+   // 'https://mern-ecommerce-web-git-f92545-aditiyadav28072005-codes-projects.vercel.app/',
+    'https://mern-ecommerce-website-8qcg.onrender.com/',
     process.env.CLIENT_URL, // we'll set this after deploying to Vercel
   ],
 }));
-app.use(express.json()); // Allow server to read JSON from request body
+// app.use(cors({
+//   origin: [
+//     'http://localhost:5173',
+//     process.env.CLIENT_URL, // we'll set this after deploying to Vercel
+//   ],
+// }));
+// app.use(express.json()); // Allow server to read JSON from request body
 
 // Test route
 app.get('/api/test', (req, res) => {
