@@ -4,7 +4,7 @@ import api from '../services/api';
 import { AuthContext } from '../context/AuthContext';
 
 const Register = () => {
-  console.log('Register route hit')
+  
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

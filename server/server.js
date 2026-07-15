@@ -26,7 +26,7 @@ app.use(cors({
     process.env.CLIENT_URL,
   ],
 }));
-// app.use(express.json()); // Allow server to read JSON from request body
+app.use(express.json()); // Allow server to read JSON from request body
 
 // Test route
 app.get('/api/test', (req, res) => {
